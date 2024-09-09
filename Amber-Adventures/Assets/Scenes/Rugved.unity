@@ -16431,6 +16431,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 188294294338751748, guid: e4790e54f97a8b54b81fc640ecf2dcf2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 823331913772666383, guid: e4790e54f97a8b54b81fc640ecf2dcf2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837045881258438064, guid: e4790e54f97a8b54b81fc640ecf2dcf2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844012972285744482, guid: e4790e54f97a8b54b81fc640ecf2dcf2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3687373962957440945, guid: e4790e54f97a8b54b81fc640ecf2dcf2, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -16478,6 +16494,18 @@ PrefabInstance:
     - target: {fileID: 4581083235357509847, guid: e4790e54f97a8b54b81fc640ecf2dcf2, type: 3}
       propertyPath: m_Name
       value: Stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155254136236743625, guid: e4790e54f97a8b54b81fc640ecf2dcf2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324308155181896016, guid: e4790e54f97a8b54b81fc640ecf2dcf2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987944222375612291, guid: e4790e54f97a8b54b81fc640ecf2dcf2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4790e54f97a8b54b81fc640ecf2dcf2, type: 3}
