@@ -18,10 +18,15 @@ public class Player_Movement : MonoBehaviour
     public float dashingPower;
     public float dashingTime;
     public float dashingCooldown;
+
+    public Transform[] spawnPoints;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         m_anim = GetComponentInChildren<Animator>();
+
+        transform.position = spawnPoints[Scene_Transition.CurrentSpawnIndex].position;
     }
 
     void Update()

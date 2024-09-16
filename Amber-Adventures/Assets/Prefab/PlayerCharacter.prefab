@@ -263,7 +263,7 @@ MonoBehaviour:
   dashingPower: 12
   dashingTime: 0.75
   dashingCooldown: 1.5
-  distanceBetweenImages: 0
+  spawnPoints: []
 --- !u!50 &9095803343107047588
 Rigidbody2D:
   serializedVersion: 4
@@ -283,7 +283,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &9095803343107047610
 CapsuleCollider2D:
