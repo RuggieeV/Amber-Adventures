@@ -17,4 +17,9 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damageToApply;
     }
+
+    void GainHealth(float healthToGain)
+    {
+        currentHealth += healthToGain;
+    }
 }

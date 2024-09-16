@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 3556164278375317066}
   m_Layer: 0
   m_Name: Barrier Front
-  m_TagString: Untagged
+  m_TagString: DashThrough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -93,4 +93,15 @@ public class Player_Movement : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "DashThrough" && isDashing == true)
+        {
+            other.collider.isTrigger = true;
+            Destroy(other.gameObject, 0f);
+        }
+    }
+
+
 }

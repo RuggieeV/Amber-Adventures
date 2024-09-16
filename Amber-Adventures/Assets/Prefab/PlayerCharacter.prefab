@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 10
   m_Sprite: {fileID: -728003346, guid: f846a3d71ab79f44b8eff860e1ea6088, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -261,9 +261,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 5
   dashingPower: 12
-  dashingTime: 0.75
+  dashingTime: 0.25
   dashingCooldown: 1.5
-  spawnPoints: []
+  spawnPoints:
+  - {fileID: 0}
 --- !u!50 &9095803343107047588
 Rigidbody2D:
   serializedVersion: 4
