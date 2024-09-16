@@ -260,6 +260,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
+  dashingPower: 12
+  dashingTime: 0.75
+  dashingCooldown: 1.5
+  distanceBetweenImages: 0
 --- !u!50 &9095803343107047588
 Rigidbody2D:
   serializedVersion: 4
