@@ -102,6 +102,4 @@ public class Player_Movement : MonoBehaviour
             Destroy(other.gameObject, 0f);
         }
     }
-
-
 }
