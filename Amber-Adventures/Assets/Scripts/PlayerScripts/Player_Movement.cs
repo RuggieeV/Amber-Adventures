@@ -59,22 +59,18 @@ public class Player_Movement : MonoBehaviour
         m_anim.speed = 1;
         if (vertical > 0)
         {
-            Console.WriteLine("lucario.anim.up");
             m_anim.Play("Lucario_Up");
         }
         else if (horizontal < 0)
         {
-            Console.WriteLine("lucario.anim.left");
             m_anim.Play("Lucario_Left");
         }
         else if (vertical < 0)
         {
-            Console.WriteLine("lucario.anim.down");
             m_anim.Play("Lucario_Down");
         }
         else if (horizontal > 0)
         {
-            Console.WriteLine("lucario.anim.right");
             m_anim.Play("Lucario_Right");
         }
         else

@@ -1519,6 +1519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golurk_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8551430716893122582, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
 --- !u!114 &607341367 stripped
@@ -1610,6 +1614,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aace6637ce6c1074d8b476e51577f531, type: 3}
+--- !u!1 &689391828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 689391829}
+  m_Layer: 0
+  m_Name: PracticeTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &689391829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689391828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.53836, y: 2.6794753, z: -0.18629484}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &709938063 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5660395978291334031, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
@@ -1635,7 +1670,60 @@ MonoBehaviour:
   currentNode: {fileID: 607341367}
   currentTarget: {fileID: 0}
   speed: 3
-  stoppingDistance: 1
+  stoppingDistance: 2
+  aggroRange: 3
+  aggroCollider: {fileID: 710956578}
+  m_EnemyAttack: {fileID: 0}
+  m_EnemyDamage: 0
+  m_EnemyAttackCooldown: 0
+--- !u!1 &710956576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 710956577}
+  - component: {fileID: 710956578}
+  m_Layer: 0
+  m_Name: Aggro Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &710956577
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710956576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 709938064}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &710956578
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710956576}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
 --- !u!1 &760372660
 GameObject:
   m_ObjectHideFlags: 0
@@ -8237,6 +8325,10 @@ PrefabInstance:
     - target: {fileID: 7537261300716224567, guid: 07bf66fbbfbbe3c4381350d95cd8bcca, type: 3}
       propertyPath: m_Name
       value: FullEnemyRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537261300716224567, guid: 07bf66fbbfbbe3c4381350d95cd8bcca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07bf66fbbfbbe3c4381350d95cd8bcca, type: 3}

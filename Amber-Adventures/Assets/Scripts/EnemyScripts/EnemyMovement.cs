@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,15 +9,30 @@ public class EnemyMovement : MonoBehaviour
     public Transform currentTarget;
     public float speed = 3;
     public float stoppingDistance = 1;
+    public float aggroRange = 5;
+    public CircleCollider2D aggroCollider;
+
+    Rigidbody2D rb;
+    Animator m_anim;
+
+    public Transform m_EnemyAttack;
+    public float m_EnemyDamage;
+    public float m_EnemyAttackCooldown;
+
+    float m_attackTimer;
 
     private void Start()
     {
         transform.position = currentNode.transform.position;
+        rb = GetComponent<Rigidbody2D>(); //new
+        m_anim = GetComponentInChildren<Animator>(); //new
+        aggroCollider.radius = aggroRange;
     }
 
     private void Update()
     {
         CreatePath();
+        EnemyAnimator();
     }
 
     public void CreatePath()
@@ -31,24 +47,26 @@ public class EnemyMovement : MonoBehaviour
                     currentNode = currentNode.nextNode;
                     currentTarget = currentNode.transform;
                 }
-                //Reached target (probably the player)
                 else
                 {
                     
                 }
             }
+
             if (Vector2.Distance(transform.position, currentTarget.position) < stoppingDistance
                 && currentNode.transform != currentTarget)
             {
                 //We are close enough to the player to do something
-                
+
                 //Attack?
-                if (currentTarget.CompareTag("Player"))
+                if (m_attackTimer < m_EnemyAttackCooldown)
                 {
-
+                    m_attackTimer += Time.deltaTime;
                 }
-
-                
+                else
+                {
+                    EnemyAttack();
+                }
             }
             //Move towards target
             else
@@ -60,5 +78,62 @@ public class EnemyMovement : MonoBehaviour
         {
             currentTarget = currentNode.transform;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            currentTarget = collision.transform;
+        }
+    }
+
+    private void EnemyAnimator()
+    {
+        float vertical = 0;
+        float horizontal = 0;
+
+        if (currentTarget != null)
+        {
+            vertical = currentTarget.position.y - transform.position.y;
+            horizontal = currentTarget.position.x - transform.position.x;
+
+            if (Mathf.Abs(vertical) > Mathf.Abs(horizontal))
+            {
+                horizontal = 0;
+            }
+            else
+            {
+                vertical = 0;
+            }
+        }
+
+       m_anim.speed = 1;
+       if (vertical > 0)
+       {
+           m_anim.Play("Up");
+       }
+       else if (horizontal < 0)
+       {
+           m_anim.Play("Left");
+       }
+       else if (vertical < 0)
+       {
+           m_anim.Play("Down");
+       }
+       else if (horizontal > 0)
+       {
+           m_anim.Play("Right");
+       }
+       else
+       {
+           m_anim.speed = 0;
+       }
+    }
+
+    private void EnemyAttack()
+    {
+        m_attackTimer = 0;
+        Instantiate(m_EnemyAttack, transform.position, transform.rotation);
     }
 }
