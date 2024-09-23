@@ -16559,6 +16559,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4050135206883054883, guid: a50a933d9399d60439bf88a14d7cd982, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7241398453241491090, guid: a50a933d9399d60439bf88a14d7cd982, type: 3}
       propertyPath: m_Name
       value: Gengar_FullEnemyRig
@@ -16664,6 +16668,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1196162776938256523, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
 --- !u!1001 &7862895246407430169
@@ -16721,6 +16729,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1837356630048306980, guid: 2aa472be503d40c45bd86e4c5d0f0b53, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2aa472be503d40c45bd86e4c5d0f0b53, type: 3}
 --- !u!1001 &8681794742473008323
@@ -16777,6 +16789,10 @@ PrefabInstance:
     - target: {fileID: 4940228213585282711, guid: e115fe8ca311d0240822db5104af95f8, type: 3}
       propertyPath: m_Name
       value: Absol_FullEnemyRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901909690931953031, guid: e115fe8ca311d0240822db5104af95f8, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e115fe8ca311d0240822db5104af95f8, type: 3}
