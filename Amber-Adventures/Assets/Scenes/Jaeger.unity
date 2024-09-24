@@ -18194,10 +18194,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrier Side
       objectReference: {fileID: 0}
-    - target: {fileID: 959332758660354930, guid: 4597b3c8a27d78540b3c3d5a09c9ecc7, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4597b3c8a27d78540b3c3d5a09c9ecc7, type: 3}
 --- !u!1 &1329382195
