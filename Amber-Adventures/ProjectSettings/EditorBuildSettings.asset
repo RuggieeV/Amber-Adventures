@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jaeger.unity
     guid: 0438d085201348a41832a62602cfc97a
+  - enabled: 1
+    path: Assets/Scenes/Final Scene.unity
+    guid: 50bcd067a8496424b9a32744a5b2b0f2
   m_configObjects: {}
