@@ -15,8 +15,10 @@ public class Player_Movement : MonoBehaviour
     private bool canDash = true;
     private bool isDashing;
     public float dashingPower;
-    public float dashingTime;
+    public float dashingTime; //
     public float dashingCooldown;
+
+    public ParticleSystem ps;
 
     public Transform[] spawnPoints;
 
@@ -83,6 +85,7 @@ public class Player_Movement : MonoBehaviour
         canDash = false;
         isDashing = true;
         rb.velocity = new Vector2(horizontal, vertical).normalized * dashingPower;
+        ps.gameObject.SetActive(true); //Activates Dash Particle
         yield return new WaitForSeconds(dashingTime);
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);

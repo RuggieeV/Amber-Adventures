@@ -19,6 +19,8 @@ public class EnemyMovement : MonoBehaviour
     public float m_EnemyDamage;
     public float m_EnemyAttackCooldown;
 
+
+
     float m_attackTimer;
 
     private void Start()
@@ -79,6 +81,7 @@ public class EnemyMovement : MonoBehaviour
             currentTarget = currentNode.transform;
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

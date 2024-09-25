@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 192289346}
   - component: {fileID: 192289345}
   m_Layer: 0
-  m_Name: Golurk Door)
+  m_Name: Golurk Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
