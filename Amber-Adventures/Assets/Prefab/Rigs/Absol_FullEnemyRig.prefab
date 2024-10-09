@@ -351,6 +351,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4940228213585282710}
     m_Modifications:
+    - target: {fileID: 1572555264896598040, guid: e2ea8e8994886c34bb56e792571b19fa, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1572555264896598041, guid: e2ea8e8994886c34bb56e792571b19fa, type: 3}
       propertyPath: m_Name
       value: Absol_EnemyBoss
@@ -427,3 +431,8 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   speed: 3
   stoppingDistance: 1
+  aggroRange: 5
+  aggroCollider: {fileID: 0}
+  m_EnemyAttack: {fileID: 0}
+  m_EnemyDamage: 0
+  m_EnemyAttackCooldown: 0

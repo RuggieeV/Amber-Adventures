@@ -6,27 +6,50 @@ using UnityEngine.Animations;
 
 public class Player_Movement : MonoBehaviour
 {
+    //Movement
     Rigidbody2D rb;
     Animator m_anim;
     float horizontal;
     float vertical;
     public float runSpeed = 3.0f;
 
+    //Dash
     private bool canDash = true;
     private bool isDashing;
     public float dashingPower;
     public float dashingTime; //
     public float dashingCooldown;
-
     public ParticleSystem ps;
 
+    //Attack 1
+    private bool canAttack;
+    private float attacktimer;
+
+    public Transform primaryAttackTransform;
+    public float primaryCooldown;
+    public KeyCode primaryAttackKeybind;
+
+    //Attack 2
+    private bool canAttack2;
+    private float attacktimer2;
+
+    public Transform secondaryAttackTransform;
+    public float secondaryCooldown;
+    public KeyCode secondaryAttackKeybind;
+
+    //SpawnPoints
     public Transform[] spawnPoints;
+
+    
+
+    
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         m_anim = GetComponentInChildren<Animator>();
-
+        canAttack = false;
         transform.position = spawnPoints[Scene_Transition.CurrentSpawnIndex].position;
     }
 
@@ -44,6 +67,26 @@ public class Player_Movement : MonoBehaviour
         {
             StartCoroutine(Dash());
         } //if player canDash, active coroutine(Dash)
+        PlayerAttack();
+        if (attacktimer < primaryCooldown)
+        {
+            attacktimer += Time.deltaTime;
+        }
+        else
+        {
+            canAttack = true;
+        }
+
+
+        if (attacktimer2 < secondaryCooldown)
+        {
+            attacktimer2 += Time.deltaTime;
+        }
+        else
+        {
+            canAttack2 = true;
+        }
+        
     }
 
     void FixedUpdate()
@@ -100,4 +143,17 @@ public class Player_Movement : MonoBehaviour
             Destroy(other.gameObject, 0f);
         }
     }
+
+    private void PlayerAttack()
+    {   
+        if (Input.GetKeyDown(primaryAttackKeybind) && canAttack)
+        {
+            Instantiate(primaryAttackTransform, transform.position, transform.rotation);
+        }
+
+        if (Input.GetKeyDown(secondaryAttackKeybind) && canAttack2)
+        {
+            Instantiate(secondaryAttackTransform, transform.position, transform.rotation);
+        }
+}
 }

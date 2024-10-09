@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class DestroyObject : MonoBehaviour
 {
+    public float time;
     private void Awake()
     {
-        Destroy(gameObject, 0.3f);
+        Destroy(gameObject, time);
     }
 }

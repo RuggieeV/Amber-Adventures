@@ -91,6 +91,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8475291177239486335, guid: f602076af696c74419051c9e0309d409, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f602076af696c74419051c9e0309d409, type: 3}
 --- !u!1 &436421389505824614 stripped
@@ -114,6 +118,11 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   speed: 3
   stoppingDistance: 1
+  aggroRange: 5
+  aggroCollider: {fileID: 0}
+  m_EnemyAttack: {fileID: 0}
+  m_EnemyDamage: 0
+  m_EnemyAttackCooldown: 0
 --- !u!4 &1341235670450595644 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6861153031774776672, guid: f602076af696c74419051c9e0309d409, type: 3}

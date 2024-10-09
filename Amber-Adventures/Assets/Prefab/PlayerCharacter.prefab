@@ -221,6 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9095803343107047590}
   - component: {fileID: 9095803343107047589}
+  - component: {fileID: 5759922988535164826}
   - component: {fileID: 9095803343107047588}
   - component: {fileID: 9095803343107047610}
   m_Layer: 0
@@ -264,9 +265,29 @@ MonoBehaviour:
   dashingTime: 0.25
   dashingCooldown: 1.5
   ps: {fileID: 3280519133390621004, guid: a71be3e7990efb040a07565c43cbb198, type: 3}
+  primaryAttackTransform: {fileID: 2499004161821813464, guid: dc483ee48281bdf45a8a1e3a3181b06b, type: 3}
+  primaryCooldown: 2.5
+  primaryAttackKeybind: 304
+  secondaryAttackTransform: {fileID: 0}
+  secondaryCooldown: 0
+  secondaryAttackKeybind: 0
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &5759922988535164826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095803343107047585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ad52661de2845429551d8e993ac99b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
 --- !u!50 &9095803343107047588
 Rigidbody2D:
   serializedVersion: 4

@@ -16,10 +16,7 @@ public class EnemyMovement : MonoBehaviour
     Animator m_anim;
 
     public Transform m_EnemyAttack;
-    public float m_EnemyDamage;
     public float m_EnemyAttackCooldown;
-
-
 
     float m_attackTimer;
 
@@ -28,11 +25,12 @@ public class EnemyMovement : MonoBehaviour
         transform.position = currentNode.transform.position;
         rb = GetComponent<Rigidbody2D>(); //new
         m_anim = GetComponentInChildren<Animator>(); //new
-        aggroCollider.radius = aggroRange;
+        
     }
 
     private void Update()
     {
+        aggroCollider.radius = aggroRange;
         CreatePath();
         EnemyAnimator();
     }
