@@ -6,6 +6,7 @@ using UnityEngine;
 public class TransformEnemyAttack : MonoBehaviour
 {
     public float damage;
+    public float speed;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,6 +15,11 @@ public class TransformEnemyAttack : MonoBehaviour
             PlayerHealth targethealth = collision.GetComponent<PlayerHealth>();
             targethealth.TakeDamage(damage);
         }
+    }
+
+    private void Update()
+    {
+        transform.position += transform.up * speed * Time.deltaTime;
     }
 }
 

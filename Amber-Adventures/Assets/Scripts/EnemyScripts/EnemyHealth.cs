@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public bool CanTakeDamage;
+    public Transform deathFX;
+    public Transform hitFX;
 
     private void Start()
     {
@@ -24,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
         if (CanTakeDamage == true)
         {
             currentHealth -= damageToApply;
+            Instantiate(hitFX, transform.position, transform.rotation);
         }
     }
 
@@ -37,6 +40,10 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Enemy Has Died!");
+            Instantiate(deathFX, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
     }
 }
+
+//DeathFX doesn't work, can't see HitFX, and the dash FX sucks

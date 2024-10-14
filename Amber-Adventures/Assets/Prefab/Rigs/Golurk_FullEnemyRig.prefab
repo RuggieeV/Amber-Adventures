@@ -363,6 +363,18 @@ PrefabInstance:
       propertyPath: m_Direction
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4034248803362467623, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
+      propertyPath: hitFX
+      value: 
+      objectReference: {fileID: 3750415898158766402, guid: 8344ff082d08d4840b5e0638defaaffd, type: 3}
+    - target: {fileID: 4034248803362467623, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
+      propertyPath: deathFX
+      value: 
+      objectReference: {fileID: 7226888052703040406, guid: 43d3dbeeecb1022429ab0bffa4999afb, type: 3}
+    - target: {fileID: 4034248803362467623, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5660395978291334028, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -411,12 +423,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golurk_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5660395978326921121, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 8551430716893122582, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
+--- !u!58 &504789417222749698 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7004232203916048031, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
+  m_PrefabInstance: {fileID: 7364888804277373085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2934257327868379921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5660395978291334028, guid: 7c4fab4ab09916e42ad261044d511f6c, type: 3}
@@ -444,7 +465,6 @@ MonoBehaviour:
   speed: 3
   stoppingDistance: 1
   aggroRange: 5
-  aggroCollider: {fileID: 0}
-  m_EnemyAttack: {fileID: 0}
-  m_EnemyDamage: 0
-  m_EnemyAttackCooldown: 0
+  aggroCollider: {fileID: 504789417222749698}
+  m_EnemyAttack: {fileID: 8226647236499332977, guid: 96bf9bcb3711f814abc818cc7f4c7e3c, type: 3}
+  m_EnemyAttackCooldown: 1

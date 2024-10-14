@@ -6,22 +6,22 @@ using UnityEngine.Animations;
 
 public class Player_Movement : MonoBehaviour
 {
-    //Movement
+    [Header("Movement")]
     Rigidbody2D rb;
     Animator m_anim;
     float horizontal;
     float vertical;
     public float runSpeed = 3.0f;
 
-    //Dash
+    [Header("Dashing")]
     private bool canDash = true;
     private bool isDashing;
     public float dashingPower;
-    public float dashingTime; //
+    public float dashingTime;
     public float dashingCooldown;
-    public ParticleSystem ps;
+    public Transform dashTransform;
 
-    //Attack 1
+    [Header("Primary Attack")]
     private bool canAttack;
     private float attacktimer;
 
@@ -29,7 +29,7 @@ public class Player_Movement : MonoBehaviour
     public float primaryCooldown;
     public KeyCode primaryAttackKeybind;
 
-    //Attack 2
+    [Header("Secondary Attack")]
     private bool canAttack2;
     private float attacktimer2;
 
@@ -37,7 +37,7 @@ public class Player_Movement : MonoBehaviour
     public float secondaryCooldown;
     public KeyCode secondaryAttackKeybind;
 
-    //SpawnPoints
+    [Header("Spawn Points")]
     public Transform[] spawnPoints;
 
     
@@ -128,7 +128,8 @@ public class Player_Movement : MonoBehaviour
         canDash = false;
         isDashing = true;
         rb.velocity = new Vector2(horizontal, vertical).normalized * dashingPower;
-        ps.gameObject.SetActive(true); //Activates Dash Particle
+        var NewDashFX = Instantiate(dashTransform, transform.position, transform.rotation);
+        NewDashFX.transform.parent = gameObject.transform;
         yield return new WaitForSeconds(dashingTime);
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
