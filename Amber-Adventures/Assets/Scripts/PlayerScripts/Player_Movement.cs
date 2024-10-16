@@ -40,10 +40,10 @@ public class Player_Movement : MonoBehaviour
     [Header("Spawn Points")]
     public Transform[] spawnPoints;
 
-    
 
-    
-    
+
+
+
 
     void Start()
     {
@@ -86,7 +86,7 @@ public class Player_Movement : MonoBehaviour
         {
             canAttack2 = true;
         }
-        
+
     }
 
     void FixedUpdate()
@@ -144,6 +144,8 @@ public class Player_Movement : MonoBehaviour
             Destroy(other.gameObject, 0f);
         }
     }
+
+
 
     private void PlayerAttack()
     {   

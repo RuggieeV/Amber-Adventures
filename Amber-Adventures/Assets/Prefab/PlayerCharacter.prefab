@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 5759922988535164826}
   - component: {fileID: 9095803343107047588}
   - component: {fileID: 9095803343107047610}
+  - component: {fileID: 2130592159}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -272,7 +273,6 @@ MonoBehaviour:
   secondaryCooldown: 0
   secondaryAttackKeybind: 0
   spawnPoints:
-  - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &5759922988535164826
 MonoBehaviour:
@@ -325,3 +325,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.5}
   m_Size: {x: 0.5, y: 0.35}
   m_Direction: 1
+--- !u!114 &2130592159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095803343107047585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67ba6a13af0dbc4da3149620da7a552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemCount: 0
+  totalGemsNeeded: 6

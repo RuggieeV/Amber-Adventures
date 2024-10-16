@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1017671078370809081}
   - component: {fileID: 1017671078370809079}
-  - component: {fileID: 1017671078370809078}
+  - component: {fileID: 8892981559662164756}
   m_Layer: 0
   m_Name: 1st Gem
   m_TagString: Untagged
@@ -60,7 +60,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44301605, y: 0.4818735}
   m_EdgeRadius: 0
---- !u!114 &1017671078370809078
+--- !u!114 &8892981559662164756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,10 +69,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1017671078370809080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8ff82eb056ef534cb153df64b007bd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c5702f6125129d438bfcecd0c2b7ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GemValue: 1
+  FX: {fileID: 141433446842962274, guid: 9fe8f8b3288e45a44af36ff8aa04486e, type: 3}
 --- !u!1 &1017671079258661237
 GameObject:
   m_ObjectHideFlags: 0
