@@ -264,7 +264,7 @@ MonoBehaviour:
   dashingPower: 12
   dashingTime: 0.25
   dashingCooldown: 1.5
-  ps: {fileID: 3280519133390621004, guid: a71be3e7990efb040a07565c43cbb198, type: 3}
+  dashTransform: {fileID: 3563356050334075557, guid: 119698d8292fffc41a344c8b35d38f26, type: 3}
   primaryAttackTransform: {fileID: 2499004161821813464, guid: dc483ee48281bdf45a8a1e3a3181b06b, type: 3}
   primaryCooldown: 2.5
   primaryAttackKeybind: 304
