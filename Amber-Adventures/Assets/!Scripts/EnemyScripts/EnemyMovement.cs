@@ -15,8 +15,11 @@ public class EnemyMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator m_anim;
 
+    public AudioSource playerDetectedSound;
+
     public Transform m_EnemyAttack;
     public float m_EnemyAttackCooldown;
+    public AudioSource attackSound;
 
     float m_attackTimer;
 
@@ -56,6 +59,7 @@ public class EnemyMovement : MonoBehaviour
             if (Vector2.Distance(transform.position, currentTarget.position) < stoppingDistance
                 && currentNode.transform != currentTarget)
             {
+                playerDetectedSound.Play();
                 //We are close enough to the player to do something
 
                 //Attack?
@@ -139,6 +143,7 @@ public class EnemyMovement : MonoBehaviour
         Vector3 direction = (currentTarget.position - transform.position).normalized;
 
         Transform projectile = Instantiate(m_EnemyAttack, transform.position, transform.rotation).transform;
+        attackSound.Play();
 
         projectile.rotation = Quaternion.LookRotation(Vector3.forward, direction);
     }

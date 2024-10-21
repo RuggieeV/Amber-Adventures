@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     private bool doorUnlocked = false;
     public Transform FX;
     private BoxCollider2D doorCollider; // Non-trigger collider to block the door
+    public AudioSource soundFX;
 
     private void Start()
     {
@@ -37,5 +38,6 @@ public class Door : MonoBehaviour
         Instantiate(FX, transform.position, transform.rotation);
         doorCollider.enabled = false; // Disable the blocking collider
         Plate.SetActive(false); // Optionally disable the door visually
+        soundFX.Play(); //May move higher in sequence later
     }
 }

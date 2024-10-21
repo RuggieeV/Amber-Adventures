@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
-
     public Transform FX;
+    public AudioSource Sound;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,6 +16,7 @@ public class Gem : MonoBehaviour
             {
                 gemCounter.AddGem();
                 Instantiate(FX, transform.position, transform.rotation);
+                Sound.Play();
                 gameObject.SetActive(false);
             }
         }

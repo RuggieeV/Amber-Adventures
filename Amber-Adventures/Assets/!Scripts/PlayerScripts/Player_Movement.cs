@@ -12,6 +12,8 @@ public class Player_Movement : MonoBehaviour
     float horizontal;
     float vertical;
     public float runSpeed = 3.0f;
+    //public AudioSource walkingSound; //Maybe if m_anim speed == => 0 play sound?
+    public AudioSource wallBreakSound;
 
     [Header("Dashing")]
     private bool canDash = true;
@@ -20,6 +22,7 @@ public class Player_Movement : MonoBehaviour
     public float dashingTime;
     public float dashingCooldown;
     public Transform dashTransform;
+    public AudioSource dashingSound;
 
     [Header("Primary Attack")]
     private bool canAttack;
@@ -28,6 +31,7 @@ public class Player_Movement : MonoBehaviour
     public Transform primaryAttackTransform;
     public float primaryCooldown;
     public KeyCode primaryAttackKeybind;
+    public AudioSource PrimaryAttackSound;
 
     [Header("Secondary Attack")]
     private bool canAttack2;
@@ -36,6 +40,7 @@ public class Player_Movement : MonoBehaviour
     public Transform secondaryAttackTransform;
     public float secondaryCooldown;
     public KeyCode secondaryAttackKeybind;
+    public AudioSource SecondaryAttackSound;
 
     [Header("Spawn Points")]
     public Transform[] spawnPoints;
@@ -125,6 +130,7 @@ public class Player_Movement : MonoBehaviour
         rb.velocity = new Vector2(horizontal, vertical).normalized * dashingPower;
         var NewDashFX = Instantiate(dashTransform, transform.position, transform.rotation);
         NewDashFX.transform.parent = gameObject.transform;
+        dashingSound.Play();
         yield return new WaitForSeconds(dashingTime);
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
@@ -137,6 +143,7 @@ public class Player_Movement : MonoBehaviour
         {
             other.collider.isTrigger = true;
             Destroy(other.gameObject, 0f);
+            wallBreakSound.Play();
         }
     }
 
@@ -146,11 +153,13 @@ public class Player_Movement : MonoBehaviour
     {   
         if (Input.GetKeyDown(primaryAttackKeybind) && canAttack)
         {
+            PrimaryAttackSound.Play();
             Instantiate(primaryAttackTransform, transform.position, transform.rotation); //Doesnt shoot in direction. Need fix
         }
 
         if (Input.GetKeyDown(secondaryAttackKeybind) && canAttack2)
         {
+            SecondaryAttackSound.Play();
             Instantiate(secondaryAttackTransform, transform.position, transform.rotation);
         }
     }
