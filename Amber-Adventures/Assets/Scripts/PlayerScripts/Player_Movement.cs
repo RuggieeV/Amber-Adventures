@@ -40,11 +40,6 @@ public class Player_Movement : MonoBehaviour
     [Header("Spawn Points")]
     public Transform[] spawnPoints;
 
-    
-
-    
-    
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -149,12 +144,12 @@ public class Player_Movement : MonoBehaviour
     {   
         if (Input.GetKeyDown(primaryAttackKeybind) && canAttack)
         {
-            Instantiate(primaryAttackTransform, transform.position, transform.rotation);
+            Instantiate(primaryAttackTransform, transform.position, transform.rotation); //Doesnt shoot in direction. Need fix
         }
 
         if (Input.GetKeyDown(secondaryAttackKeybind) && canAttack2)
         {
             Instantiate(secondaryAttackTransform, transform.position, transform.rotation);
         }
-}
+    }
 }
