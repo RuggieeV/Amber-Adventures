@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   hitCount: 1
-  hitFX: {fileID: 3750415898158766402, guid: 8344ff082d08d4840b5e0638defaaffd, type: 3}
+  OnhitFX: {fileID: 3750415898158766402, guid: 8344ff082d08d4840b5e0638defaaffd, type: 3}
+  OnHitSound: {fileID: 0}
   destroyTime: 1
   speed: 0
 --- !u!58 &3055338699494106414
