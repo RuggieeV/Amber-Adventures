@@ -38,6 +38,6 @@ public class Door : MonoBehaviour
         Instantiate(FX, transform.position, transform.rotation);
         doorCollider.enabled = false; // Disable the blocking collider
         Plate.SetActive(false); // Optionally disable the door visually
-        soundFX.Play(); //May move higher in sequence later
+        //soundFX.Play(); //May move higher in sequence later
     }
 }

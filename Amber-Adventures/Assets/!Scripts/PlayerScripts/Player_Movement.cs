@@ -130,7 +130,7 @@ public class Player_Movement : MonoBehaviour
         rb.velocity = new Vector2(horizontal, vertical).normalized * dashingPower;
         var NewDashFX = Instantiate(dashTransform, transform.position, transform.rotation);
         NewDashFX.transform.parent = gameObject.transform;
-        dashingSound.Play();
+        //dashingSound.Play();
         yield return new WaitForSeconds(dashingTime);
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
@@ -143,7 +143,7 @@ public class Player_Movement : MonoBehaviour
         {
             other.collider.isTrigger = true;
             Destroy(other.gameObject, 0f);
-            wallBreakSound.Play();
+            //wallBreakSound.Play();
         }
     }
 
@@ -153,14 +153,14 @@ public class Player_Movement : MonoBehaviour
     {   
         if (Input.GetKeyDown(primaryAttackKeybind) && canAttack)
         {
-            PrimaryAttackSound.Play();
             Instantiate(primaryAttackTransform, transform.position, transform.rotation); //Doesnt shoot in direction. Need fix
+            //PrimaryAttackSound.Play();
         }
 
         if (Input.GetKeyDown(secondaryAttackKeybind) && canAttack2)
         {
-            SecondaryAttackSound.Play();
             Instantiate(secondaryAttackTransform, transform.position, transform.rotation);
+            //SecondaryAttackSound.Play();
         }
     }
 }

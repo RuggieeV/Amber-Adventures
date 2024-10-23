@@ -11,6 +11,7 @@ public class TransformPlayerAttack : MonoBehaviour
     public float damage;
     public int hitCount;
     public Transform hitFX;
+    public AudioSource HitSound;
     public float destroyTime;
     public float speed;
 
@@ -21,10 +22,11 @@ public class TransformPlayerAttack : MonoBehaviour
 
          if (collision.CompareTag("Enemy") && cooldownTimer <= 0)
          {
-             Instantiate(hitFX, collision.transform.position, collision.transform.rotation); //HitFX spawns at the collision
-             EnemyHealth targetHealth = collision.GetComponent<EnemyHealth>();               //Grabs Enemy Health
-             targetHealth.TakeDamage(damage);                                                //Deals damage
-            cooldownTimer = destroyTime / hitCount;                                          //Splits damage into equal intervals
+            Instantiate(hitFX, collision.transform.position, collision.transform.rotation); //HitFX spawns at the collision
+            EnemyHealth targetHealth = collision.GetComponent<EnemyHealth>();               //Grabs Enemy Health
+            targetHealth.TakeDamage(damage);                                                //Deals damage
+            cooldownTimer = destroyTime / hitCount;                                         //Splits hits into equal intervals
+            //HitSound.Play();
          }
     }
 

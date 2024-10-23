@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth;
     public float currentHealth;
-
+    public AudioSource PlayerHurt;
 
     private void Start()
     {
@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damageToApply)
     {
         currentHealth -= damageToApply;
+        //PlayerHurt.Play();
     }
 
     public void GainHealth(float healthToGain)

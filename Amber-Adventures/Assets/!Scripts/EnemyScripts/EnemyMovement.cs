@@ -90,6 +90,7 @@ public class EnemyMovement : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             currentTarget = collision.transform;
+            //playerDetectedSound.Play();
         }
     }
 
@@ -143,7 +144,7 @@ public class EnemyMovement : MonoBehaviour
         Vector3 direction = (currentTarget.position - transform.position).normalized;
 
         Transform projectile = Instantiate(m_EnemyAttack, transform.position, transform.rotation).transform;
-        attackSound.Play();
+        //attackSound.Play();
 
         projectile.rotation = Quaternion.LookRotation(Vector3.forward, direction);
     }
