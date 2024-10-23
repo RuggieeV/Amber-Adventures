@@ -130,7 +130,7 @@ public class Player_Movement : MonoBehaviour
         rb.velocity = new Vector2(horizontal, vertical).normalized * dashingPower;
         var NewDashFX = Instantiate(dashTransform, transform.position, transform.rotation);
         NewDashFX.transform.parent = gameObject.transform;
-        //dashingSound.Play();
+        dashingSound.Play();
         yield return new WaitForSeconds(dashingTime);
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
@@ -143,7 +143,7 @@ public class Player_Movement : MonoBehaviour
         {
             other.collider.isTrigger = true;
             Destroy(other.gameObject, 0f);
-            //wallBreakSound.Play();
+            wallBreakSound.Play();
         }
     }
 

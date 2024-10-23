@@ -16,7 +16,7 @@ public class Gem : MonoBehaviour
             {
                 gemCounter.AddGem();
                 Instantiate(FX, transform.position, transform.rotation);
-                //GemSound.Play();
+                GemSound.Play();
                 gameObject.SetActive(false);
             }
         }

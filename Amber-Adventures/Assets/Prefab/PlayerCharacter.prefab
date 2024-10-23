@@ -262,17 +262,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
+  wallBreakSound: {fileID: 0}
   dashingPower: 12
   dashingTime: 0.25
   dashingCooldown: 1.5
   dashTransform: {fileID: 3563356050334075557, guid: 119698d8292fffc41a344c8b35d38f26, type: 3}
+  dashingSound: {fileID: 0}
   primaryAttackTransform: {fileID: 1821042045472207534, guid: f2d4c0b1ed744e94784de501de5c7799, type: 3}
   primaryCooldown: 4
   primaryAttackKeybind: 304
+  PrimaryAttackSound: {fileID: 0}
   secondaryAttackTransform: {fileID: 0}
   secondaryCooldown: 0
   secondaryAttackKeybind: 0
+  SecondaryAttackSound: {fileID: 0}
   spawnPoints:
+  - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &5759922988535164826
 MonoBehaviour:
@@ -288,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
+  PlayerHurt: {fileID: 0}
 --- !u!50 &9095803343107047588
 Rigidbody2D:
   serializedVersion: 4
