@@ -2,16 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth;
     public float currentHealth;
     public AudioSource PlayerHurt;
+    public Image HealthBar;
 
     private void Start()
     {
         currentHealth = maxHealth;
+    }
+
+    private void Update()
+    {
+        HealthBar.fillAmount = currentHealth / maxHealth;
     }
 
     private void FixedUpdate()

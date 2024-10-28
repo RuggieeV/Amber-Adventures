@@ -192,6 +192,7 @@ public class Player_Movement : MonoBehaviour
     IEnumerator Stun(float stunTime)
     {
         isKeysDisabled = true;
+        m_anim.speed = 0;
         yield return new WaitForSeconds(stunTime);
         isKeysDisabled = false;
     }
