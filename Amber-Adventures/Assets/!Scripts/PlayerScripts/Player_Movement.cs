@@ -177,14 +177,14 @@ public class Player_Movement : MonoBehaviour
         {
             Instantiate(primaryAttackTransform, transform.position, 
                 Quaternion.LookRotation(Vector3.forward,direction)); //Doesnt shoot in direction. Need fix
-            //PrimaryAttackSound.Play();
+            PrimaryAttackSound.Play();
             StartCoroutine(Stun(PrimaryStunTime));
         }
 
         if (Input.GetKeyDown(secondaryAttackKeybind) && canAttack2)
         {
             Instantiate(secondaryAttackTransform, transform.position, transform.rotation);
-            //SecondaryAttackSound.Play();
+            SecondaryAttackSound.Play();
             StartCoroutine(Stun(SecondaryStunTime));
         }
     }
