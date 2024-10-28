@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -12,7 +13,7 @@ public class Player_Movement : MonoBehaviour
     float horizontal;
     float vertical;
     public float runSpeed = 3.0f;
-    //public AudioSource walkingSound; //Maybe if m_anim speed == => 0 play sound?
+    //public AudioSource walkingSound; //Maybe if m_anim speed > 0 play sound?
     public AudioSource wallBreakSound;
     private bool isKeysDisabled;
     Vector2 direction;
@@ -27,7 +28,7 @@ public class Player_Movement : MonoBehaviour
     public AudioSource dashingSound;
 
     [Header("Primary Attack")]
-    private bool canAttack;
+    private bool canAttack = true;
     private float attacktimer;
 
     public Transform primaryAttackTransform;
@@ -35,16 +36,6 @@ public class Player_Movement : MonoBehaviour
     public KeyCode primaryAttackKeybind;
     public AudioSource PrimaryAttackSound;
     public float PrimaryStunTime;
-
-    [Header("Secondary Attack")]
-    private bool canAttack2;
-    private float attacktimer2;
-
-    public Transform secondaryAttackTransform;
-    public float secondaryCooldown;
-    public KeyCode secondaryAttackKeybind;
-    public AudioSource SecondaryAttackSound;
-    public float SecondaryStunTime;
 
     [Header("Spawn Points")]
     public Transform[] spawnPoints;
@@ -54,7 +45,6 @@ public class Player_Movement : MonoBehaviour
         isKeysDisabled = false;
         rb = GetComponent<Rigidbody2D>();
         m_anim = GetComponentInChildren<Animator>();
-        canAttack = false;
         transform.position = spawnPoints[Scene_Transition.CurrentSpawnIndex].position;
     }
 
@@ -65,9 +55,10 @@ public class Player_Movement : MonoBehaviour
             if (isDashing)
             {
                 return;
-            } //'pauses' movement until dash is finished
-            horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left, 1 is right, 0 is neither
-            vertical = Input.GetAxisRaw("Vertical"); // -1 is down, 1 is up, 0 is neither
+            }
+
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
             MovementAnimation();
 
             if (horizontal != 0 || vertical != 0)
@@ -78,30 +69,18 @@ public class Player_Movement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && canDash)
             {
                 StartCoroutine(Dash());
-            } //if player canDash, active coroutine(Dash)
-            PlayerAttack();
+            }
+            if (Input.GetKeyDown(primaryAttackKeybind) && canAttack)
+            {
+                StartCoroutine(PrimaryAttack());
+            }
             if (attacktimer < primaryCooldown)
             {
                 attacktimer += Time.deltaTime;
             }
-            else
-            {
-                canAttack = true;
-            }
-
-
-            if (attacktimer2 < secondaryCooldown)
-            {
-                attacktimer2 += Time.deltaTime;
-            }
-            else
-            {
-                canAttack2 = true;
-            }
         }
         else
-        {
-            
+        {  
         }
     }
 
@@ -146,7 +125,15 @@ public class Player_Movement : MonoBehaviour
             m_anim.speed = 0;
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "DashThrough" && isDashing == true)
+        {
+            other.collider.isTrigger = true;
+            Destroy(other.gameObject, 0f);
+            wallBreakSound.Play();
+        }
+    }
     private IEnumerator Dash()
     {
         canDash = false;
@@ -161,34 +148,16 @@ public class Player_Movement : MonoBehaviour
         canDash = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private IEnumerator PrimaryAttack()
     {
-        if (other.gameObject.tag == "DashThrough" && isDashing == true)
-        {
-            other.collider.isTrigger = true;
-            Destroy(other.gameObject, 0f);
-            wallBreakSound.Play();
-        }
+        canAttack = false;
+        Instantiate(primaryAttackTransform, transform.position,
+        Quaternion.LookRotation(Vector3.forward, direction));
+        //PrimaryAttackSound.Play();
+        StartCoroutine(Stun(PrimaryStunTime));
+        yield return new WaitForSeconds(primaryCooldown);
+        canAttack = true;
     }
-
-    private void PlayerAttack()
-    {   
-        if (Input.GetKeyDown(primaryAttackKeybind) && canAttack)
-        {
-            Instantiate(primaryAttackTransform, transform.position, 
-                Quaternion.LookRotation(Vector3.forward,direction)); //Doesnt shoot in direction. Need fix
-            PrimaryAttackSound.Play();
-            StartCoroutine(Stun(PrimaryStunTime));
-        }
-
-        if (Input.GetKeyDown(secondaryAttackKeybind) && canAttack2)
-        {
-            Instantiate(secondaryAttackTransform, transform.position, transform.rotation);
-            SecondaryAttackSound.Play();
-            StartCoroutine(Stun(SecondaryStunTime));
-        }
-    }
-
     IEnumerator Stun(float stunTime)
     {
         isKeysDisabled = true;

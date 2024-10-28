@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Debug.Log("Enemy Has Died!");
             Instantiate(deathFX, transform.position, transform.rotation);
-            //DeathSound.Play();
+            DeathSound.Play();
             Destroy(gameObject);
         }
     }
