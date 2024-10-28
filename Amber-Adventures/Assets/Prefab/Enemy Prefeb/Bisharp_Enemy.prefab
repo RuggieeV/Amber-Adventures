@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8385992294242667092}
   - component: {fileID: 496359436778059790}
   - component: {fileID: 4718999162526242673}
+  - component: {fileID: 4648136763175199370}
   m_Layer: 0
   m_Name: Bisharp_Enemy
   m_TagString: Enemy
@@ -69,9 +70,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04, y: -0.3}
-  m_Size: {x: 0.5, y: 0.8}
-  m_Direction: 0
+  m_Offset: {x: -0.04, y: -0.65}
+  m_Size: {x: 0.5, y: 0.35}
+  m_Direction: 1
 --- !u!114 &4718999162526242673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +88,30 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   CanTakeDamage: 1
+  deathFX: {fileID: 725748389856807727, guid: 4bda94453d2ca7444a0fff05b2d425f5, type: 3}
+  DeathSound: {fileID: 0}
+--- !u!114 &4648136763175199370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3402427915513514329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2686a5e69bdee449abfde23918b166a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentNode: {fileID: 0}
+  currentTarget: {fileID: 0}
+  speed: 3
+  stoppingDistance: 1
+  aggroRange: 5
+  aggroCollider: {fileID: 5078032986780195952}
+  playerDetectedSound: {fileID: 0}
+  m_EnemyAttack: {fileID: 0}
+  m_EnemyAttackCooldown: 0
+  attackSound: {fileID: 0}
 --- !u!1 &3402427917402802095
 GameObject:
   m_ObjectHideFlags: 0
