@@ -153,7 +153,7 @@ public class Player_Movement : MonoBehaviour
         canAttack = false;
         Instantiate(primaryAttackTransform, transform.position,
         Quaternion.LookRotation(Vector3.forward, direction));
-        //PrimaryAttackSound.Play();
+        PrimaryAttackSound.Play();
         StartCoroutine(Stun(PrimaryStunTime));
         yield return new WaitForSeconds(primaryCooldown);
         canAttack = true;

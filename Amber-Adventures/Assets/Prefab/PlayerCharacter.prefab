@@ -273,14 +273,8 @@ MonoBehaviour:
   primaryCooldown: 8
   primaryAttackKeybind: 304
   PrimaryAttackSound: {fileID: 0}
-  PrimaryStunTime: 0.75
-  secondaryAttackTransform: {fileID: 0}
-  secondaryCooldown: 0
-  secondaryAttackKeybind: 0
-  SecondaryAttackSound: {fileID: 0}
-  SecondaryStunTime: 0
+  PrimaryStunTime: 0.85
   spawnPoints:
-  - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &5759922988535164826
 MonoBehaviour:

@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/!Scenes/Rugved.unity
+    path: Assets/!Scenes/First Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/!Scenes/Jaeger.unity
+    path: Assets/!Scenes/Second Scene.unity
     guid: 0438d085201348a41832a62602cfc97a
   - enabled: 1
-    path: Assets/!Scenes/Final Scene.unity
+    path: Assets/!Scenes/Third Scene.unity
     guid: 50bcd067a8496424b9a32744a5b2b0f2
+  - enabled: 1
+    path: Assets/!Scenes/EndMenu.unity
+    guid: 27dd22123487db447b7e346f744e2371
+  - enabled: 1
+    path: Assets/!Scenes/StartMenu.unity
+    guid: d5d9c11fca9673847883821421eb5979
   m_configObjects: {}
