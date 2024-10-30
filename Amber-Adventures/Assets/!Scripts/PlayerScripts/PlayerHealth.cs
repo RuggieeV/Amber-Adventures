@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
     public AudioSource PlayerHurt;
     public Image HealthBar;
+    [SerializeField] TextMeshProUGUI TextMaxHealth;
+    [SerializeField] TextMeshProUGUI TextCurrentHealth;
+    
 
     private void Start()
     {
@@ -20,6 +24,8 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         HealthBar.fillAmount = currentHealth / maxHealth;
+        TextMaxHealth.text = maxHealth.ToString();
+        TextCurrentHealth.text = currentHealth.ToString();
     }
 
     private void FixedUpdate()
@@ -43,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Player Has Died!");
-            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
