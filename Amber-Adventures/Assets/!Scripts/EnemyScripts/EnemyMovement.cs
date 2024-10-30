@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator m_anim;
 
-    public AudioSource playerDetectedSound;
+    
 
     public Transform m_EnemyAttack;
     public float m_EnemyAttackCooldown;
@@ -59,7 +59,7 @@ public class EnemyMovement : MonoBehaviour
             if (Vector2.Distance(transform.position, currentTarget.position) < stoppingDistance
                 && currentNode.transform != currentTarget)
             {
-                playerDetectedSound.Play();
+                //playerDetectedSound.Play();
                 //We are close enough to the player to do something
 
                 //Attack?
