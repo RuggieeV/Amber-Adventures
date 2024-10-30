@@ -4743,7 +4743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9095803343107047590, guid: aace6637ce6c1074d8b476e51577f531, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.43
+      value: -18.58
       objectReference: {fileID: 0}
     - target: {fileID: 9095803343107047590, guid: aace6637ce6c1074d8b476e51577f531, type: 3}
       propertyPath: m_LocalPosition.y
@@ -46465,6 +46465,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 504789417222749698, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
+      propertyPath: m_Radius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1057479912541544102, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
       propertyPath: m_Name
       value: Golurk_FullEnemyRig
@@ -46475,11 +46479,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1057479912541544103, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.85
+      value: -18.94
       objectReference: {fileID: 0}
     - target: {fileID: 1057479912541544103, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.98
+      value: -2.04
       objectReference: {fileID: 0}
     - target: {fileID: 1057479912541544103, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
       propertyPath: m_LocalPosition.z
@@ -46550,9 +46554,29 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7364888803513058650, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 1592665795}
+    - target: {fileID: 7364888803513058650, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
       propertyPath: aggroCollider
       value: 
       objectReference: {fileID: 666137135}
+    - target: {fileID: 7364888803513058650, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
+      propertyPath: m_EnemyAttack
+      value: 
+      objectReference: {fileID: 4492273335233837460, guid: cb713e7cdab14e04abc2f1c73284a1e7, type: 3}
+    - target: {fileID: 7364888803513058650, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
+      propertyPath: stoppingDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364888803513058650, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
+      propertyPath: playerDetectedSound
+      value: 
+      objectReference: {fileID: 144064385}
+    - target: {fileID: 7364888803513058650, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
+      propertyPath: m_EnemyAttackCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfa0da08bd70ca745955ac3e2afc1d67, type: 3}
 --- !u!1 &1933175338

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8791802859067835849}
   - component: {fileID: 8791802859067882601}
   m_Layer: 0
-  m_Name: CFXR4 Firework 1 Cyan-Purple (HDR)
+  m_Name: Firework
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

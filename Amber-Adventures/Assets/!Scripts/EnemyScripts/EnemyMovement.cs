@@ -140,12 +140,9 @@ public class EnemyMovement : MonoBehaviour
     private void EnemyAttack()
     {
         m_attackTimer = 0;
-
         Vector3 direction = (currentTarget.position - transform.position).normalized;
-
         Transform projectile = Instantiate(m_EnemyAttack, transform.position, transform.rotation).transform;
-        attackSound.Play();
-
         projectile.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        attackSound.Play();
     }
 }
