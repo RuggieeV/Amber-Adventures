@@ -68,6 +68,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6799348085220113231}
     m_Modifications:
+    - target: {fileID: 1623716925502659047, guid: 1ecbff16ac42dda40abaab32cf686787, type: 3}
+      propertyPath: m_SortingOrder
+      value: 49
+      objectReference: {fileID: 0}
     - target: {fileID: 2231602972377332275, guid: 1ecbff16ac42dda40abaab32cf686787, type: 3}
       propertyPath: m_Name
       value: Scratch
