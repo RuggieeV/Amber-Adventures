@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ad52661de2845429551d8e993ac99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 150
   currentHealth: 0
   PlayerHurt: {fileID: 0}
   HealthBar: {fileID: 7922057070660478403}
