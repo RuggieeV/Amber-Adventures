@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damageToApply)
     {
         currentHealth -= damageToApply;
-        //PlayerHurt.Play();
+        PlayerHurt.Play();
     }
 
     public void GainHealth(float healthToGain)

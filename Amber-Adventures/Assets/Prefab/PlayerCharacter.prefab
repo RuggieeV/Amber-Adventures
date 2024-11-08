@@ -277,7 +277,6 @@ MonoBehaviour:
   PrimaryStunTime: 0.85
   spawnPoints:
   - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &5759922988535164826
 MonoBehaviour:
   m_ObjectHideFlags: 0

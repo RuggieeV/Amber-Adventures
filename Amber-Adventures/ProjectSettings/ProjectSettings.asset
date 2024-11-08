@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: PokegonNo
   productName: 'Amber Adventures: Sunny Day'
-  defaultCursor: {fileID: 2800000, guid: 60e45c3a5c24e16469e3e443aca1450e, type: 3}
+  defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

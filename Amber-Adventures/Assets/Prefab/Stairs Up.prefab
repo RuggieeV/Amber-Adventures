@@ -985,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c6fc4f8adcdfa408e5cbc8b5b3c5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Rugved
+  SceneName: First scene
   EndSpawnPoint: 1
 --- !u!1 &1311191465809809574
 GameObject:

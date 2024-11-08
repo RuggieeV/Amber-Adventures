@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 7
-  hitCount: 10
+  hitCount: 1
   OnhitFX: {fileID: 2827881830804850272, guid: 3292d0be7f93a1c4cac60ce0565cf0d5, type: 3}
   OnHitSound: {fileID: 0}
   destroyTime: 1
